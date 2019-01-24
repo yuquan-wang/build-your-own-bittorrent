@@ -6,7 +6,7 @@ import java.util.Map;
 /*
     Algorithm introduction: https://en.wikipedia.org/wiki/Bencode
  */
-public class BEncoder {
+public class BEncode {
     private static final String INVALID = "Invalid input";
 
     private String data = "";
