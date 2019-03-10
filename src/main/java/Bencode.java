@@ -6,7 +6,7 @@ import java.util.Map;
 /*
     Algorithm introduction: https://en.wikipedia.org/wiki/Bencode
  */
-public class BEncode {
+public class Bencode {
     private static final String INVALID = "Invalid input";
 
     private String data = "";
@@ -30,7 +30,7 @@ public class BEncode {
     public String encode(Object input) throws Exception {
         if (input instanceof String) {
             return ((String) input).length() + ":" + input;
-        } else if (input instanceof Integer) {
+        } else if (input instanceof Integer || input instanceof Long) {
             return "i" + input + "e";
         } else if (input instanceof Iterable) {
             String output = "l";
