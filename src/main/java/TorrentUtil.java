@@ -31,7 +31,7 @@ public class TorrentUtil {
 
             byte[] contents = IOUtils.toByteArray(fileInputStream, nextPieceLength);
             byte[] sha1 = DigestUtils.sha1(contents);
-            pieces += new String(sha1, Charset.defaultCharset());
+            pieces += new String(sha1, Charset.forName("UTF-16"));
 
             len -= nextPieceLength;
         }

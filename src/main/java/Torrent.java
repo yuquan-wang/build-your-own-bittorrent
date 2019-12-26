@@ -1,6 +1,9 @@
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class Torrent {
     static String ANNOUNCE_FIELD = "announce";
@@ -34,6 +37,10 @@ public class Torrent {
         info.put(PIECES_FILED, pieces);
         m.put(INFO_FIELD, info);
         return m;
+    }
+
+    public String getInfoHash() {
+        return DigestUtils.md5Hex(torrentToMap().toString());
     }
 
     public String getAnnounce() {
